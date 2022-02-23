@@ -1,0 +1,12 @@
+.input-edit {
+  width: 40vw;
+  height: 2.5rem;
+  border-radius: 10px;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.instruction {
+  height: 6.5rem;
+}

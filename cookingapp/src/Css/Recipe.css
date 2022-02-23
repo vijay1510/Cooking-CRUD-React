@@ -12,7 +12,7 @@
   border: none;
   background: none;
   outline: none;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 .btn--primary {
