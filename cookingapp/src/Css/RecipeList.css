@@ -1,0 +1,25 @@
+.receipe-list {
+  border-right: 2px solid black;
+  width: 50%;
+  min-height: 100vh;
+}
+
+.btn-div {
+  text-align: center;
+  margin-top: 80px;
+}
+.receipe-list-btn {
+  border: none;
+  background: none;
+  outline: none;
+  border-radius: 5%;
+  background-color: hsl(200, 100%, 50%);
+  cursor: pointer;
+  height: 30px;
+  width: 150px;
+  padding: 10px;
+}
+
+.receipe-list-btn:hover {
+  background-color: hsl(200, 80%, 30%);
+}
