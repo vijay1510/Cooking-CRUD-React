@@ -1,24 +1,30 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const sampleRecipes = [
   {
-    id: 1,
+    id: uuidv4(),
     name: "PlAIN CHICKEN",
     cookTime: "2:45",
     servings: 2,
-    instructions: ["Put salt on chicken", "Put chicken in oven", "Eat chicken"],
+    instructions:
+      "1. Put salt on chicken\n2. Put chicken in oven\n3. Eat chicken",
+    ingredients: "1. chicken - 2 kg\n2. salt - 1tbs",
   },
   {
-    id: 2,
+    id: uuidv4(),
     name: "PlAIN PORK",
     cookTime: "3:45",
     servings: 3,
-    instructions: ["Put salt on pork", "Put pork in oven", "Eat pork"],
+    instructions: "1. Put salt on pork\n2. Put pork in oven\n3. Eat pork",
+    ingredients: "1. pork - 2 kg\n2. pepper - 1tbs",
   },
 ];
 
 export const newRecipe = {
-  id: 3,
-  name: "PlAIN BEEF",
-  cookTime: "5:45",
-  servings: 4,
-  instructions: ["Put salt on BEEF", "Put BEEF in oven", "Eat BEEF"],
+  id: uuidv4(),
+  name: "",
+  cookTime: "",
+  servings: "",
+  instructions: "",
+  ingredients: "",
 };

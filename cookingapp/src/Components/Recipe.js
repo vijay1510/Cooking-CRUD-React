@@ -1,20 +1,38 @@
 import React from "react";
 
 export default function Recipe(props) {
-  const { id, name, cookTime, servings, instructions, handleDelete } = props;
+  const {
+    id,
+    name,
+    cookTime,
+    servings,
+    instructions,
+    ingredients,
+    handleDelete,
+    handleEditRecipe,
+  } = props;
 
   return (
     <div className='recipe'>
-      <h1>{name}</h1>
-      <p>CookTime: {cookTime}</p>
-      <p>Servings: {servings}</p>
+      <h1 className='recipe-name'>{name}</h1>
+      <p>
+        CookTime: <span className='recipe-span'>{cookTime}</span>
+      </p>
+      <p>
+        Servings: <sapn className='recipe-span'>{servings}</sapn>
+      </p>
       <p>
         Instructions:
-        {instructions.map((i) => {
-          return <li>{i}</li>;
-        })}
+        <span className='recipe-details'>{instructions}</span>
       </p>
-      <button className='btn btn--primary'>Edit</button>
+      <p>
+        Ingredients:
+        <span className='recipe-details'>{ingredients}</span>
+      </p>
+
+      <button onClick={() => handleEditRecipe(id)} className='btn btn--primary'>
+        Edit
+      </button>
       <button onClick={() => handleDelete(id)} className='btn btn--secondary'>
         Delete
       </button>

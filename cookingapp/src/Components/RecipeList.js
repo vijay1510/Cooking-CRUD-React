@@ -5,19 +5,28 @@ export default function RecipeList({
   sampleRecipes,
   handleNewRecipe,
   handleDelete,
+  handleEditRecipe,
 }) {
   return (
     <div className='receipe-list'>
       <div>
         {sampleRecipes.map((recipe) => {
           return (
-            <Recipe key={recipe.id} {...recipe} handleDelete={handleDelete} />
+            <div>
+              <Recipe
+                key={recipe.id}
+                {...recipe}
+                handleDelete={handleDelete}
+                handleEditRecipe={handleEditRecipe}
+              />
+            </div>
           );
         })}
       </div>
-      <div class='btn-div'>
-        <button onClick={() => handleNewRecipe()} className='receipe-list-btn'>
-          Add Recipe
+
+      <div className='btn-div'>
+        <button className='receipe-list-btn' onClick={() => handleNewRecipe()}>
+          <span className='recipe-add'>Add Recipe</span>
         </button>
       </div>
     </div>

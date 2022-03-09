@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sampleRecipes, newRecipe } from "../Data/RecipeArray";
 import RecipeList from "./RecipeList";
 import EditRecipe from "./EditRecipe";
 import "../Css/App.css";
 
 function App() {
+  const ALL_RECIPES = "ALL-RECIPES";
+  const [selectedRecipeId, setSelectedReceipeId] = useState();
   const [recipe, setRecipe] = useState(sampleRecipes);
-  const [selectedRecipe, setSelectedReceipe] = useState([]);
+  const selectedRecipe = recipe.find((e) => e.id === selectedRecipeId);
+
+  useEffect(() => {
+    const recipeJSON = localStorage.getItem(ALL_RECIPES);
+    recipeJSON && setRecipe(JSON.parse(recipeJSON));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(ALL_RECIPES, JSON.stringify(recipe));
+  }, [recipe]);
 
   function handleNewRecipe() {
     setRecipe([...recipe, newRecipe]);
+    selectedRecipeId(newRecipe.id);
   }
 
   function handleDelete(id) {
@@ -17,10 +29,16 @@ function App() {
   }
 
   function handleEditRecipe(id) {
-    setSelectedReceipe(recipe.filter((e) => console.log(e.name)));
+    setSelectedReceipeId(id);
   }
 
-  //console.log(handleEditRecipe(2));
+  function handleUpdateRecipes(id, updatedRecipe) {
+    const DuplicateReceipe = [...recipe];
+    const index = DuplicateReceipe.findIndex((e) => e.id === id);
+    DuplicateReceipe[index] = updatedRecipe;
+    setRecipe(DuplicateReceipe);
+    console.log(recipe, "recipes");
+  }
 
   return (
     <>
@@ -29,10 +47,17 @@ function App() {
           sampleRecipes={recipe}
           handleNewRecipe={handleNewRecipe}
           handleDelete={handleDelete}
+          handleEditRecipe={handleEditRecipe}
         />
       </div>
       <div className='edit-recipe'>
-        <EditRecipe />
+        {selectedRecipe && (
+          <EditRecipe
+            selectedRecipe={selectedRecipe}
+            handleUpdateRecipes={handleUpdateRecipes}
+            handleEditRecipe={handleEditRecipe}
+          />
+        )}
       </div>
     </>
   );

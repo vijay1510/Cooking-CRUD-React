@@ -2,6 +2,7 @@
 @import "./Recipe.css";
 @import "./RecipeList.css";
 @import "./EditRecipe.css";
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@700&display=swap");
 
 *,
 html,
@@ -9,6 +10,8 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Pacifico", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
