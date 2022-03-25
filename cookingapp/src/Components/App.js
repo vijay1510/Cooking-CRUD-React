@@ -21,7 +21,7 @@ function App() {
 
   function handleNewRecipe() {
     setRecipe([...recipe, newRecipe]);
-    selectedRecipeId(newRecipe.id);
+    setSelectedReceipeId(newRecipe.id);
   }
 
   function handleDelete(id) {
@@ -37,7 +37,6 @@ function App() {
     const index = DuplicateReceipe.findIndex((e) => e.id === id);
     DuplicateReceipe[index] = updatedRecipe;
     setRecipe(DuplicateReceipe);
-    console.log(recipe, "recipes");
   }
 
   return (

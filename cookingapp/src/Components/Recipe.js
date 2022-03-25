@@ -19,7 +19,7 @@ export default function Recipe(props) {
         CookTime: <span className='recipe-span'>{cookTime}</span>
       </p>
       <p>
-        Servings: <sapn className='recipe-span'>{servings}</sapn>
+        Servings: <span className='recipe-span'>{servings}</span>
       </p>
       <p>
         Instructions:
