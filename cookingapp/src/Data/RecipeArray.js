@@ -21,7 +21,6 @@ export const sampleRecipes = [
 ];
 
 export const newRecipe = {
-  id: uuidv4(),
   name: "",
   cookTime: "",
   servings: "",
