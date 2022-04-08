@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { sampleRecipes, newRecipe } from "../Data/RecipeArray";
+import { sampleRecipes } from "../Data/RecipeArray";
 import RecipeList from "./RecipeList";
 import EditRecipe from "./EditRecipe";
 import "../Css/App.css";
@@ -31,7 +31,6 @@ function App() {
     };
     setRecipe([...recipe, newRecipe]);
     setSelectedReceipeId(newRecipe.id);
-    console.log(newRecipe.id);
   }
 
   function handleDelete(id) {

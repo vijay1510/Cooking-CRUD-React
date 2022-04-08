@@ -1,4 +1,4 @@
-@import-normalize;
+@import "normalize";
 @import "./Header.css";
 @import "./Recipe.css";
 @import "./RecipeList.css";
