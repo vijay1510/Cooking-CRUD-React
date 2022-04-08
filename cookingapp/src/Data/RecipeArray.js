@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 export const sampleRecipes = [
   {
     id: uuidv4(),
-    name: "PlAIN CHICKEN",
+    name: "PLAIN CHICKEN",
     cookTime: "2:45",
     servings: 2,
     instructions:
@@ -12,18 +12,10 @@ export const sampleRecipes = [
   },
   {
     id: uuidv4(),
-    name: "PlAIN PORK",
+    name: "PLAIN PORK",
     cookTime: "3:45",
     servings: 3,
     instructions: "1. Put salt on pork\n2. Put pork in oven\n3. Eat pork",
     ingredients: "1. pork - 2 kg\n2. pepper - 1tbs",
   },
 ];
-
-export const newRecipe = {
-  name: "",
-  cookTime: "",
-  servings: "",
-  instructions: "",
-  ingredients: "",
-};

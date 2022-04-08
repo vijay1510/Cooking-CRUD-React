@@ -25,6 +25,9 @@
 .label-edit {
   font-weight: 700;
 }
+.edit-recipe {
+  margin-top: 80px;
+}
 
 @media (max-width: 820px) {
   .btn-close {

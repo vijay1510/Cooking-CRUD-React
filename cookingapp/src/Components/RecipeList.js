@@ -25,7 +25,7 @@ export default function RecipeList({
       </div>
 
       <div className='btn-div'>
-        <button className='receipe-list-btn' onClick={() => handleNewRecipe()}>
+        <button className='receipe-list-btn' onClick={handleNewRecipe}>
           <span className='recipe-add'>Add Recipe</span>
         </button>
       </div>

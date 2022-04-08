@@ -21,8 +21,17 @@ function App() {
   }, [recipe]);
 
   function handleNewRecipe() {
-    setRecipe([...recipe, { newRecipe, id: uuidv4() }]);
+    const newRecipe = {
+      id: uuidv4(),
+      name: "",
+      cookTime: "",
+      servings: "",
+      instructions: "",
+      ingredients: "",
+    };
+    setRecipe([...recipe, newRecipe]);
     setSelectedReceipeId(newRecipe.id);
+    console.log(newRecipe.id);
   }
 
   function handleDelete(id) {
